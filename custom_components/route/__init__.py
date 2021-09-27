@@ -48,7 +48,7 @@ async def async_setup(hass: HomeAssistantType, config: ConfigType) -> bool:
         "tz": config[DOMAIN][CONF_TIME_ZONE],
         "token": config[DOMAIN][CONF_TOKEN],
         "devs": config[DOMAIN][CONF_DEVICES],
-        "haddr": config["http"]["base_url"],
+        "haddr": config["homeassistant"]["external_url"],
     }
 
     sensors_gps = hass.data[DOMAIN]["sensors_gps"] = SensorsGps(hass,myconfig)
@@ -66,14 +66,14 @@ async def async_setup(hass: HomeAssistantType, config: ConfigType) -> bool:
 
     try:
         hass.http.register_view(Route(hass, myconfig))
-        hass.components.frontend.async_register_built_in_panel(
-            "iframe",
-            "Routes",
-            "mdi:routes",
-            "myroute",
-            {"url": "/route/route.html"},
-            require_admin=False,
-        )
+        #hass.components.frontend.async_register_built_in_panel(
+        #    "iframe",
+        #    "Routes",
+        #    "mdi:routes",
+        #    "myroute",
+        #    {"url": "/route/route.html"},
+        #    require_admin=False,
+        #)
     except:
         _LOGGER.error("Error creating panel")
         return False
