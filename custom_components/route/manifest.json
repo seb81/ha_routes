@@ -1,8 +1,8 @@
 {
   "domain": "route",
-  "name": "route",
+  "name": "route fork",
   "version": "1.0",
-  "documentation": "https://github.com/mavrikkk/ha_routes",
+  "documentation": "https://github.com/seb81/ha_routes",
   "dependencies": [],
   "codeowners": ["@mavrikkk"],
   "requirements": []
