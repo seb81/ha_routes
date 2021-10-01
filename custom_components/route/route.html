@@ -506,8 +506,8 @@ body{background-color:#1c1c1c}
 //var devices = ['id_1','sensor.car_gps_sensor'];
 var devices = array_of_devices_variable;
 
-var mymap = L.map('map').setView([51.515988002382834,30.757020198336786], 14);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>"}).addTo(mymap);
+var mymap = L.map('map').setView([hlat_variable,hlon_variable], 14);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a>"}).addTo(mymap);
 
 
 for (var i=0; i<devices.length; i++) {
@@ -640,8 +640,8 @@ function clearMap(){
 if (mymap !== undefined && mymap !== null) {
 mymap.remove();
 }
-mymap = L.map('map').setView([51.515988002382834,30.757020198336786], 14);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>"}).addTo(mymap);
+mymap = L.map('map').setView([hlat_variable,hlon_variable], 14);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a>"}).addTo(mymap);
 }
 
 mainAction();
