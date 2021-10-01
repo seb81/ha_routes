@@ -27,10 +27,14 @@ CONF_NUMBER_OF_DAYS = 'days'
 DEFAULT_NUMBER_OF_DAYS = 10
 CONF_MIN_DST = 'mindst'
 DEFAULT_MIN_DST = 0.1
+CONF_HA_LAT = 'hlat'
+CONF_HA_LON = 'hlon'
 
 CONFIG_SCHEMA = vol.Schema({DOMAIN: vol.Schema(
                {vol.Optional(CONF_NUMBER_OF_DAYS, default=DEFAULT_NUMBER_OF_DAYS): cv.positive_int, 
                 vol.Optional(CONF_MIN_DST, default=DEFAULT_MIN_DST): cv.small_float, 
+                vol.Required(CONF_HA_LAT): cv.string,
+                vol.Required(CONF_HA_LON): cv.string,
                 vol.Required(CONF_TIME_ZONE): cv.string, 
                 vol.Required(CONF_TOKEN): cv.string,
                 vol.Required(CONF_DEVICES): vol.All(cv.ensure_list,),
@@ -49,6 +53,8 @@ async def async_setup(hass: HomeAssistantType, config: ConfigType) -> bool:
         "token": config[DOMAIN][CONF_TOKEN],
         "devs": config[DOMAIN][CONF_DEVICES],
         "haddr": config["homeassistant"]["external_url"],
+        "hlat": config[DOMAIN][CONF_HA_LAT],
+        "hlon": config[DOMAIN][CONF_HA_LON],
     }
 
     sensors_gps = hass.data[DOMAIN]["sensors_gps"] = SensorsGps(hass,myconfig)
@@ -113,6 +119,8 @@ class Route(HomeAssistantView):
             filedata = filedata.replace('access_token_variable', self._cfg["token"])
             filedata = filedata.replace('haddr_variable', "'" + self._cfg["haddr"] + "'")
             filedata = filedata.replace('minimal_distance_variable', str(self._cfg["mindst"]))
+            filedata = filedata.replace('hlat_variable', str(self._cfg["hlat"]))
+            filedata = filedata.replace('hlon_variable', str(self._cfg["hlon"]))
             devices_var = '['
             for device in self._cfg["devs"]:
                 entity_domain = device.split('.')[0]
