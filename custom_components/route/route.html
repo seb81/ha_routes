@@ -488,10 +488,14 @@ L$1.polylineDecorator = function (paths, options) {
 
 })));
 </script>
-<style>html, body, #map {width: 95%; height: 95%; margin-top: 2%; margin-left: 2.5%;}</style>
+<style>
+html,body,#map{width:100%;height: 100%;margin:0;}
+body{background-color:#1c1c1c}
+.select-divice-time{position:absolute;top: 15px;right: 20px;z-index: 999;}
+</style>
 </head>
 <body>
-<form name="myForm">
+<form name="myForm" class="select-divice-time">
 <select name="elements" size="1">
 </select>
 <select name="date" size="1">
@@ -502,7 +506,7 @@ L$1.polylineDecorator = function (paths, options) {
 //var devices = ['id_1','sensor.car_gps_sensor'];
 var devices = array_of_devices_variable;
 
-var mymap = L.map('map').setView([55.755826,37.617], 12);
+var mymap = L.map('map').setView([51.515988002382834,30.757020198336786], 14);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>"}).addTo(mymap);
 
 
@@ -636,7 +640,7 @@ function clearMap(){
 if (mymap !== undefined && mymap !== null) {
 mymap.remove();
 }
-mymap = L.map('map').setView([55.755826,37.617], 12);
+mymap = L.map('map').setView([51.515988002382834,30.757020198336786], 14);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>"}).addTo(mymap);
 }
 
