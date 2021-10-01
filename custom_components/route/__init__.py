@@ -29,12 +29,14 @@ CONF_MIN_DST = 'mindst'
 DEFAULT_MIN_DST = 0.1
 CONF_HA_LAT = 'hlat'
 CONF_HA_LON = 'hlon'
+DEFAULT_HA_LAT = '50.45058054498433'
+DEFAULT_HA_LON = '30.52286792099014'
 
 CONFIG_SCHEMA = vol.Schema({DOMAIN: vol.Schema(
                {vol.Optional(CONF_NUMBER_OF_DAYS, default=DEFAULT_NUMBER_OF_DAYS): cv.positive_int, 
                 vol.Optional(CONF_MIN_DST, default=DEFAULT_MIN_DST): cv.small_float, 
-                vol.Required(CONF_HA_LAT): cv.string,
-                vol.Required(CONF_HA_LON): cv.string,
+                vol.Required(CONF_HA_LAT, default=DEFAULT_HA_LAT): cv.string,
+                vol.Required(CONF_HA_LON, default=DEFAULT_HA_LON): cv.string,
                 vol.Required(CONF_TIME_ZONE): cv.string, 
                 vol.Required(CONF_TOKEN): cv.string,
                 vol.Required(CONF_DEVICES): vol.All(cv.ensure_list,),
