@@ -7,6 +7,8 @@
 
 Что нового:
 
+2021/10/1 Подправлены стили для отображения, убрана боковая панель (можно добавить в lovelace: карточка веб-страница /route/route.html); вместо base_url используется external_url; добавлены 2 новые переменные hlat и hlon в конфигурацию, в которых можно задать свои координаты для карты по-умолчанию
+
 2020/06/30 Поддержка последних версий HA. После установки ОБЯЗАТЕЛЬНО почистите кеш браузера!
 
 2020/05/07 В список можно добавлять как sensor так и device_tracker. В том случае, если вы добавили для отслеживания device_tracker в системе автоматически создастся виртуальный сенсор. ВНИМАНИЕ! Убедитесь, что все нужные сенсоры (в том числе и виртуальные) записывают историю в БД.
@@ -18,6 +20,8 @@
 2020/02/12 Боковая панель создается автоматически. Теперь компонент защищен авторизацией HA
 
 What's new:
+
+2021/10/1 Tweaked styles for display, removed sidebar (can be added to lovelace: card web page /route/route.html); external_url is used instead of base_url; added 2 new variables hlat and hlon to the configuration, in which you can set your own coordinates for the map by default 
 
 2020/06/30 Support for last HA versions. Please, clean browser cache after installation!
 
