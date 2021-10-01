@@ -41,8 +41,10 @@ What's new:
 route:
   days: num_days
   mindst: your_min_dst
-  time_zone: your_timezone
+  time_zone: your_timezone 
   token: your_long_life_token
+  hlat: your_default_latitude # "50.401699" для Киева
+  hlon: your_default_lonitude # "30.252512" для Киева
   devices:
     - your_sensor_entity_id1
     - your_device_tracker_entity_id1
@@ -66,6 +68,8 @@ route:
   mindst: your_min_dst
   time_zone: your_timezone
   token: your_long_life_token
+  hlat: your_default_latitude # "50.401699" for Kiev
+  hlon: your_default_lonitude # "30.252512" for Kiev
   devices:
     - your_sensor_entity_id1
     - your_device_tracker_entity_id1
